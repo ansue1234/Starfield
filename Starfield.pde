@@ -1,26 +1,64 @@
 //your code here
+
 void setup()
 {
-	//your code here
+	size(600,600);
+
 }
+
 void draw()
 {
 	//your code here
 }
-class NormalParticle
+
+class NormalParticle implements Particle
 {
-	//your code here
+	int c;
+	double x,y,spe,ang;
+
+	NormalParticle(){
+		x=300;
+		y=300;
+		ang=(double)(Math.random()*2*Math.PI);
+		spe=(double)(Math.random()*8);
+	}
+
+	public void move(){
+		
+	}
+	public void show(){
+
+	}
+
+
+
 }
+
 interface Particle
 {
-	//your code here
+	public move();
+	public show();
 }
-class OddballParticle //uses an interface
+
+class OddballParticle implements Particle //uses an interface
 {
 	//your code here
+	public void move(){
+
+	}
+	public void show(){
+		
+	}
 }
-class JumboParticle //uses inheritance
+
+class JumboParticle implements Particle//uses inheritance
 {
 	//your code here
+	public void move(){
+
+	}
+	public void show(){
+		
+	}
 }
 
