@@ -21,11 +21,9 @@ public void draw()
 {
   background(0);
   for(int i = 0; i< particles.length; i++){
+  	 particles[i].move();
   	 particles[i].show();
   	 particles[i].origin();
-  	if(bx==400&&by==400){
-      particles[i].move();
-  	} 
   }
 }
 
@@ -49,8 +47,8 @@ class NormalParticle implements Particle
 	    
 		ang = ang+2*(Math.PI/180);
 		spe = spe+1;
-		x = x+spe*Math.cos(ang);
-		y = y+spe*Math.sin(ang);
+		x = x+spe*Math.sin(ang);
+		y = y+spe*Math.cos(ang);
 
 	}
 	public void show(){
@@ -60,9 +58,11 @@ class NormalParticle implements Particle
 	}
 
 	public void origin(){
-		if(x>800||y>800||x<0||y<0){
-			x=400;
-			y=400;
+		if(x>300||y>300||x<0||y<0){
+		   x=400;
+		   y=400;
+		   
+		   spe = spe;
 		}
 	}
 }
