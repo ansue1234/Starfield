@@ -1,5 +1,5 @@
 //your code here
-int np = 2000;
+int np = 1700;
 int r = (int)(Math.random()*255);
 int g = (int)(Math.random()*255);
 int b = (int)(Math.random()*255);
@@ -10,7 +10,7 @@ Particle [] particles;
 public void setup()
 {
   int i;
-  frameRate(30);
+  frameRate(20);
 	size(800,800);
   particles = new Particle[np];
   for(i = 0; i< particles.length; i++){
@@ -26,7 +26,7 @@ public void setup()
 
 public void draw()
 {
-  background(0,0,0,5);
+  background(0);
   for(int i = 0; i< particles.length; i++){
   	 particles[i].move();
   	 particles[i].show();
@@ -56,9 +56,9 @@ class NormalParticle implements Particle
 
 	}
 	public void show(){
-	    fill(c,90);
+	    fill(c,95);
 	    noStroke();
-	    ellipse((float)x,(float)y,5,5);
+	    ellipse((float)x,(float)y,10,10);
 	}
 
 	public void origin(){
